@@ -17,3 +17,4 @@ PygmentsCodeFences = true
         [markup.goldmark.renderer]
             unsafe = true
 
+ignoreLogs = ['shortcode-twitter-getremote']
