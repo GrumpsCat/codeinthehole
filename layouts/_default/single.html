@@ -1,0 +1,72 @@
+{{ partial "header.html" . }}
+{{ partial "article_nav.html" . }}
+
+<div id="main" role="main">
+
+    <div id="content" class="article">
+
+        <h1 id="article_title" class="entry-title">{{ .Title }}</h1>
+
+        <div class="byline desktop_only">
+            by <a href="/about/" class="author vcard">David Winterbottom</a>
+            on <time class="published" datetime="">{{ .Date.Format "Monday, 2 January 2006" }}</time>
+        </div>
+        <div class="byline mobile_only">
+            by <a href="/about/" class="author vcard">David Winterbottom</a><br/>
+            <span class="article_date">on <time class="published" datetime="">{{ .Date.Format "Monday, 2 January 2006" }}</time></span>
+        </div>
+
+        <div id="article_content" class="entry-content">
+            {{ .Content }}
+        </div>
+
+        <div id="article_meta">
+            <span class="hr">——————</span>
+            <p>
+            Something wrong? 
+            <a href="https://github.com/codeinthehole/codeinthehole.hugo/edit/master/content/{{ .File.Path }}">Suggest an improvement</a>
+            or 
+            <a href="https://github.com/codeinthehole/codeinthehole.hugo/issues/new?title=Comment%20on%20%22{{ .Title }}%22&body=Article:%20{{ .Title }}%0AURL:%20{{ .Permalink }}">add a comment</a>
+            (see <a href="https://github.com/codeinthehole/codeinthehole.hugo/commits/master/content/{{ .File.Path }}">article history</a>)<br/>
+
+            {{ if .Params.Tags }}
+                Tagged with:
+                {{ $num_tags := len .Params.Tags }}
+                {{ range $index, $tag := .Params.Tags }}{{ if ne $index 0 }},{{ end}} <a href="/tags/{{ $tag | urlize }}">{{ . }}</a>{{ end }}
+                <br/>
+            {{ end }}
+            {{ if .Section }}
+                Filed in: <a href="/{{ .Section }}/">{{ .Section }}</a>
+            {{ end }}
+            </p>
+
+            <p>
+            {{ if .Prev }}
+                Previous: <a href="{{ .Prev.RelPermalink }}">{{ .Prev.Title }}</a><br/>
+            {{ end }}
+            {{ if .Next }}
+                Next: <a href="{{ .Next.RelPermalink }}">{{ .Next.Title }}</a>
+            {{ end }}
+            </p>
+
+            <p>
+            Copyright &copy; 2005-{{ now.Format "2006" }} <a href="/about/">David Winterbottom</a><br/>
+            Content licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+<script>
+    {{ if .Prev }}
+        Mousetrap.bind("left", function() { window.location.replace("{{ .Prev.RelPermalink }}"); })
+    {{ end }}
+
+    {{ if .Next }}
+        Mousetrap.bind("right", function() { window.location.replace("{{ .Next.RelPermalink }}"); })
+    {{ end }}
+</script>
+
+{{ partial "footer.html" . }}

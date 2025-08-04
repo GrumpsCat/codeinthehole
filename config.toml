@@ -1,0 +1,19 @@
+baseurl = "https://codeinthehole.com/"
+title = "David Winterbottom"
+languageCode = "en-us"
+
+PygmentsCodeFences = true
+
+[services]
+    [services.googleAnalytics]
+        ID = 'G-5TB73Q80KQ'
+
+[params]
+    author = "David Winterbottom"
+    description = "A software engineer working in London."
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
