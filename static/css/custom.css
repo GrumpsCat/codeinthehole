@@ -1,13 +1,14 @@
-/* Apply Merriweather site-wide */
-body {
-    font-family: 'Merriweather', serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
+/* Override headers to use Merriweather */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif !important;
+    font-weight: 700; /* Make them bold */
+    letter-spacing: 0.5px; /* Slight spacing for elegance */
+    line-height: 1.2;
 }
 
-/* Make your name at the top stand out */
+/* Specifically target the logo title (Greg) */
 #logo h1 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', serif !important;
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: 0.5px;
