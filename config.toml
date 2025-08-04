@@ -1,5 +1,5 @@
 baseurl = "https://codeinthehole.com/"
-title = "David Winterbottom"
+title = "Greg"
 languageCode = "en-us"
 
 PygmentsCodeFences = true
@@ -9,7 +9,7 @@ PygmentsCodeFences = true
         ID = 'G-5TB73Q80KQ'
 
 [params]
-    author = "David Winterbottom"
+    author = "Greg"
     description = "A software engineer working in London."
 
 [markup]
