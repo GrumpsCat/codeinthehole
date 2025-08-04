@@ -1,6 +1,14 @@
+/* Apply Merriweather site-wide */
+body {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Make your name at the top stand out */
 #logo h1 {
-    font-family: 'Roboto Slab', serif; /* Replace with your preferred font */
-    font-size: 3rem;  /* Adjust size as needed */
-    font-weight: bold;
-    letter-spacing: 1px; /* Optional: adds spacing between letters */
+    font-family: 'Merriweather', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
